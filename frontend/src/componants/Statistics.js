@@ -9,7 +9,7 @@ function Statistics({month}) {
     useEffect(() => {
 
 
-        axios.get('http://localhost:3001/get-statistics', {
+        axios.get('https://rs-assignment-deployed.onrender.com/get-statistics', {
             params: {
                 month: month
             }

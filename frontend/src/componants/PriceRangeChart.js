@@ -8,7 +8,7 @@ function PriceRangeChart({month}) {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/get-price-range', { params: { month: month } })
+        axios.get('https://rs-assignment-deployed.onrender.com/get-price-range', { params: { month: month } })
             .then(resp => {
 
                 const priceRanges = resp.data.priceRanges;

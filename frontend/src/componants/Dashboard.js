@@ -19,7 +19,7 @@ function Dashboard() {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/get-products')
+    axios.get('https://rs-assignment-deployed.onrender.com/get-products')
       .then(resp => console.log(resp))
       .catch(err => console.log(err))
 
@@ -36,7 +36,7 @@ function Dashboard() {
 
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/get-transactions', {
+      const response = await axios.get('https://rs-assignment-deployed.onrender.com/get-transactions', {
         params: {
           search,
           page,
@@ -66,7 +66,7 @@ function Dashboard() {
   // comibed data
 
   useEffect(() => {
-    axios.get('http://localhost:3001/get-transactions-based-on-month', { params: { month: month } })
+    axios.get('https://rs-assignment-deployed.onrender.com/get-transactions-based-on-month', { params: { month: month } })
       .then(resp => {
         // console.log('get-transactions-based-on-month',resp.data)
         const filteredData = resp.data.filteredProducts || [];
@@ -75,7 +75,7 @@ function Dashboard() {
       .catch(err => console.log(err))
 
 
-    axios.get('http://localhost:3001/get-combined-data', { params: { month: month } })
+    axios.get('https://rs-assignment-deployed.onrender.com/get-combined-data', { params: { month: month } })
       .then(resp => {
         console.log('comibeddata', resp.data)
 
@@ -85,7 +85,7 @@ function Dashboard() {
   }, [month])
 
   const getCandidate = () => {
-    axios.get('http://localhost:3001/get-name')
+    axios.get('https://rs-assignment-deployed.onrender.com/get-name')
       .then(resp => {
         if(resp.data.massage == 'authorvs'){
           setCand(resp.data.name)

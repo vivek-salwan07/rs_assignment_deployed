@@ -10,7 +10,7 @@ function CategoryChart({ month }) {
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', '#FF4567'];
     useEffect(() => {
 
-        axios.get('http://localhost:3001/get-category', { params: { month: month } })
+        axios.get('https://rs-assignment-deployed.onrender.com/get-category', { params: { month: month } })
             .then(resp => {
                 // console.log('categorydata', resp.data)
                 setCategoryData(resp.data.data)
