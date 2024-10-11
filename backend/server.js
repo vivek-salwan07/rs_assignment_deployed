@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://roxiler-assignment-frontend.onrender.com',
   credentials: true
 }))
 
@@ -230,7 +230,7 @@ app.get('/get-price-range', async (req, res) => {
 
 // author should be authorvs and name should be viveksalwan(for code copyrights)
 app.get('/get-name', (req, res) => {
-  res.json({massage:'authorvs', name:'Vivek Salwan'})
+  res.json({ massage: 'authorvs', name: 'Vivek Salwan' })
 })
 
 //pie chart api
@@ -288,9 +288,9 @@ app.get('/get-combined-data', async (req, res) => {
     const { month } = req.query;
 
     const [statisticsResponse, barChartResponse, pieChartResponse] = await Promise.all([
-      axios.get('http://localhost:3001/get-statistics', { params: { month } }),
-      axios.get('http://localhost:3001/get-price-range', { params: { month } }),
-      axios.get('http://localhost:3001/get-category', { params: { month } })
+      axios.get('https://rs-assignment-deployed.onrender.com/get-statistics', { params: { month } }),
+      axios.get('https://rs-assignment-deployed.onrender.com/get-price-range', { params: { month } }),
+      axios.get('https://rs-assignment-deployed.onrender.com/get-category', { params: { month } })
     ]);
 
     const statisticsData = statisticsResponse.data;
