@@ -8,14 +8,14 @@ const ProductModel = require('./models/product');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-
 app.use(cors({
   origin: 'http://localhost:3000',
   credentials: true
 }))
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/Roxiler_System_Task')
+mongoose.connect('mongodb+srv://viveksalwan63:utz4BOsIaNPWuDNt@e-commerce.6nl3f.mongodb.net/?retryWrites=true&w=majority&appName=roxilersystems')
+
   .then(resp => console.log('database connected'))
   .catch(err => console.log(err))
 
