@@ -9,9 +9,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({
-  origin: 'https://roxiler-assignment-frontend.onrender.com',
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT'],
   credentials: true
-}))
+}));
+
 
 
 mongoose.connect('mongodb+srv://viveksalwan63:utz4BOsIaNPWuDNt@e-commerce.6nl3f.mongodb.net/?retryWrites=true&w=majority&appName=roxilersystems')
